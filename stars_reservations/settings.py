@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['oceanstars.vercel.app', 'localhost']
 
 
 # Application definition
@@ -76,7 +76,7 @@ TEMPLATES = [
 
 
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = ['https://oceanstars.vercel.app', 'http://localhost:3000']
 
 WSGI_APPLICATION = 'stars_reservations.wsgi.application'
 
