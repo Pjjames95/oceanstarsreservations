@@ -76,7 +76,9 @@ TEMPLATES = [
 
 
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'https://oceanstars.vercel.app']
+CORS_ALLOWED_ORIGINS = [
+'https://oceanstars.vercel.app',
+]
 
 WSGI_APPLICATION = 'stars_reservations.wsgi.application'
 
