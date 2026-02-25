@@ -1,0 +1,22 @@
+databases:
+  - name: stars_reservationsdb
+    plan: free
+    databaseName: stars_reservations
+    user: stars_reservations
+
+services:
+  - type: web
+    plan: free
+    name: stars_reservations
+    runtime: python
+    buildCommand: './build.sh'
+    startCommand: 'python -m gunicorn stars_reservations.asgi:application -k uvicorn.workers.UvicornWorker'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: stars_reservationsdb
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
